@@ -1,4 +1,4 @@
-// TODO: drop all fail!
+// TODO: drop all panic!
 
 use std::mem;
 use std::raw;
@@ -54,7 +54,7 @@ pub mod wire_format {
                 3 => WireTypeStartGroup,
                 4 => WireTypeEndGroup,
                 5 => WireTypeFixed32,
-                _ => fail!("unknown wire type: {}", n)
+                _ => panic!("unknown wire type: {}", n)
             }
         }
     }
@@ -141,7 +141,7 @@ impl<'a> CodedInputStream<'a> {
     // Otherwize returns true.
     fn refill_buffer(&mut self) -> bool {
         if self.buffer_pos < self.buffer_size {
-            fail!("called when buffer is not empty");
+            panic!("called when buffer is not empty");
         }
         if self.pos() == self.current_limit {
             return false;
@@ -158,12 +158,12 @@ impl<'a> CodedInputStream<'a> {
                     let r = reader.read(self.buffer.as_mut_slice());
                     self.buffer_size = match r {
                         Err(ref e) if e.kind == EndOfFile => return false,
-                        Err(_) => fail!(),
+                        Err(_) => panic!(),
                         Ok(x) => x as u32,
                     };
                     assert!(self.buffer_size > 0);
                 },
-                None => fail!(),
+                None => panic!(),
             }
             self.recompute_buffer_size_after_limit();
             true
@@ -172,7 +172,7 @@ impl<'a> CodedInputStream<'a> {
 
     fn refill_buffer_really(&mut self) {
         if !self.refill_buffer() {
-            fail!("at EOF");
+            panic!("at EOF");
         }
     }
 
@@ -192,7 +192,7 @@ impl<'a> CodedInputStream<'a> {
         let old_limit = self.current_limit;
         let new_limit = self.pos() + limit;
         if new_limit > old_limit {
-            fail!("truncated message");
+            panic!("truncated message");
         }
         self.current_limit = new_limit;
         self.recompute_buffer_size_after_limit();
@@ -201,7 +201,7 @@ impl<'a> CodedInputStream<'a> {
 
     pub fn pop_limit(&mut self, old_limit: u32) {
         if self.bytes_until_limit() != 0 {
-            fail!("must pop only at current limit")
+            panic!("must pop only at current limit")
         }
         self.current_limit = old_limit;
         self.recompute_buffer_size_after_limit();
@@ -343,7 +343,7 @@ impl<'a> CodedInputStream<'a> {
                 let len = self.read_raw_varint32();
                 UnknownLengthDelimited(self.read_raw_bytes(len))
             },
-            _ => fail!("unknown wire type: {:i}", wire_type as int)
+            _ => panic!("unknown wire type: {:i}", wire_type as int)
         }
     }
 
@@ -495,7 +495,7 @@ impl<'a> CodedOutputStream<'a> {
             Some(ref mut writer) => {
                 writer.write(self.buffer.slice(0, self.position as uint)).unwrap();
             },
-            None => fail!()
+            None => panic!()
         };
         self.position = 0;
     }
@@ -518,7 +518,7 @@ impl<'a> CodedOutputStream<'a> {
         self.refresh_buffer();
         match self.writer {
             Some(ref mut writer) => writer.write(bytes).unwrap(),
-            None => fail!()
+            None => panic!()
         };
     }
 
@@ -822,11 +822,11 @@ pub trait Message : PartialEq + Clone + Default + fmt::Show + Clear {
 
     // http://stackoverflow.com/q/20342436/15018
     fn descriptor_static(_: Option<Self>) -> &'static MessageDescriptor {
-        fail!();
+        panic!();
     }
 
     fn type_id(&self) -> TypeId {
-        fail!();
+        panic!();
     }
 
     // Rust does not allow implementation of trait for trait:
@@ -865,7 +865,7 @@ pub trait ProtobufEnum : Eq {
 
     // http://stackoverflow.com/q/20342436/15018
     fn enum_descriptor_static(_: Option<Self>) -> &'static EnumDescriptor {
-        fail!();
+        panic!();
     }
 }
 

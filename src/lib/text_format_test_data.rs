@@ -2467,7 +2467,7 @@ impl TestEnum {
         match value {
             1 => DARK,
             2 => LIGHT,
-            _ => fail!()
+            _ => panic!()
         }
     }
 }

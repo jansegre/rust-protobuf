@@ -5435,7 +5435,7 @@ impl TestEnumDescriptor {
             1 => RED,
             2 => BLUE,
             3 => GREEN,
-            _ => fail!()
+            _ => panic!()
         }
     }
 }
