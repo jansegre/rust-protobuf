@@ -790,7 +790,7 @@ impl<'a> IndentWriter<'a> {
 
     #[allow(dead_code)]
     fn fail<S : Str>(&self, reason: S) {
-        self.write_line(format!("panic!({:?});", reason));
+        self.write_line(format!("panic!({});", reason));
     }
 
     #[allow(dead_code)]
@@ -867,7 +867,7 @@ impl<'a> IndentWriter<'a> {
 
 fn write_merge_from_field_message_string_bytes(w: &mut IndentWriter) {
     let field = w.field();
-    w.write_line(format!("assert_eq!(::protobuf::wire_format::{:?}, wire_type);",
+    w.write_line(format!("assert_eq!(::protobuf::wire_format::{}, wire_type);",
             wire_format::WireTypeLengthDelimited));
     if field.repeated {
         w.write_line(format!("let tmp = {}.push_default();", w.self_field()));
@@ -911,7 +911,7 @@ fn write_merge_from_field(w: &mut IndentWriter) {
 
         match repeat_mode {
             Single | RepeatRegular => {
-                w.write_line(format!("assert_eq!(::protobuf::wire_format::{:?}, wire_type);", wire_type));
+                w.write_line(format!("assert_eq!(::protobuf::wire_format::{}, wire_type);", wire_type));
                 w.write_line(format!("let tmp = {:s};", read_proc));
                 match repeat_mode {
                     Single => w.self_field_assign_some("tmp"),
@@ -920,7 +920,7 @@ fn write_merge_from_field(w: &mut IndentWriter) {
                 }
             },
             RepeatPacked => {
-                w.write_line(format!("if wire_type == ::protobuf::wire_format::{:?} {{", wire_format::WireTypeLengthDelimited));
+                w.write_line(format!("if wire_type == ::protobuf::wire_format::{} {{", wire_format::WireTypeLengthDelimited));
                 w.indented(|w| {
                     w.write_line("let len = is.read_raw_varint32();");
                     w.write_line("let old_limit = is.push_limit(len);");
@@ -931,7 +931,7 @@ fn write_merge_from_field(w: &mut IndentWriter) {
                 });
                 w.write_line("} else {");
                 w.indented(|w| {
-                    w.write_line(format!("assert_eq!(::protobuf::wire_format::{:?}, wire_type);", wire_type));
+                    w.write_line(format!("assert_eq!(::protobuf::wire_format::{}, wire_type);", wire_type));
                     w.self_field_push(read_proc);
                 });
                 w.write_line("}");
@@ -1010,7 +1010,7 @@ fn write_message_compute_sizes(w: &mut IndentWriter) {
                                     },
                                     _ => {
                                         w.write_line(format!(
-                                                "my_size += ::protobuf::rt::value_size({:d}, *value, ::protobuf::wire_format::{:?});",
+                                                "my_size += ::protobuf::rt::value_size({:d}, *value, ::protobuf::wire_format::{});",
                                                 field.number as int, field.wire_type));
                                     },
                                 }
@@ -1051,7 +1051,7 @@ fn write_message_write_field(w: &mut IndentWriter) {
     };
     let write_value_lines = match field.field_type {
         FieldDescriptorProto_TYPE_MESSAGE => vec!(
-            format!("os.write_tag({:d}, ::protobuf::wire_format::{:?});",
+            format!("os.write_tag({:d}, ::protobuf::wire_format::{});",
                     field_number as int, wire_format::WireTypeLengthDelimited),
             format!("os.write_raw_varint32(sizes[*sizes_pos]);"),
             format!("*sizes_pos += 1;"),
@@ -1072,7 +1072,7 @@ fn write_message_write_field(w: &mut IndentWriter) {
         },
         RepeatPacked => {
             w.if_self_field_is_not_empty(|w| {
-                w.write_line(format!("os.write_tag({:d}, ::protobuf::wire_format::{:?});", field_number as int, wire_format::WireTypeLengthDelimited));
+                w.write_line(format!("os.write_tag({:d}, ::protobuf::wire_format::{});", field_number as int, wire_format::WireTypeLengthDelimited));
                 // Data size is computed again here,
                 // probably it should be cached in `sizes` vec
                 let data_size_expr = w.self_field_vec_packed_data_size();
