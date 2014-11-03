@@ -240,7 +240,7 @@ impl<T : Default+Clear> RepeatedField<T> {
 impl<T : Clone> RepeatedField<T> {
     #[inline]
     pub fn from_slice(values: &[T]) -> RepeatedField<T> {
-        RepeatedField::from_vec(Vec::from_slice(values))
+        RepeatedField::from_vec(values.to_vec())
     }
 }
 
@@ -248,7 +248,7 @@ impl<T : Clone> Clone for RepeatedField<T> {
     #[inline]
     fn clone(&self) -> RepeatedField<T> {
         RepeatedField {
-            vec: Vec::from_slice(self.as_slice()),
+            vec: self.as_slice().to_vec(),
             len: self.len(),
         }
     }
