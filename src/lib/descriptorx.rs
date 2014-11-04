@@ -15,7 +15,7 @@ impl<'a> MessagePath<'a> {
             "".to_string()
         } else {
             let v: Vec<&'a str> = self.path.iter().map(|m| m.get_name()).collect();
-            v.connect("_").append("_")
+            v.connect("_") + "_"
         }
     }
 }
@@ -56,7 +56,7 @@ struct EnumWithPath<'a> {
 
 impl<'a> EnumWithPath<'a> {
     fn rust_name(&self) -> String {
-        self.path.rust_prefix().append(self.en.get_name())
+        self.path.rust_prefix() + self.en.get_name()
     }
 }
 
@@ -64,7 +64,7 @@ impl<'a> EnumWithPath<'a> {
 fn find_messages<'a>(fd: &'a FileDescriptorProto) -> Vec<MessageWithPath<'a>> {
     fn collect<'a>(origin: &MessageWithPath<'a>) -> Vec<MessageWithPath<'a>> {
         let this_level: Vec<MessageWithPath<'a>> = origin.get_message().get_nested_type().iter()
-                .map(|m| MessageWithPath { path: origin.path.clone().append(&[m]) })
+                .map(|m| MessageWithPath { path: origin.path.clone() + vec![m] })
                 .collect();
         collect_and_walk(this_level.as_slice())
     }

@@ -321,6 +321,7 @@ impl<'a> Test2 {
     }
 
     pub fn clear_b(&mut self) {
+        use protobuf::Clear;
         self.b.clear();
     }
 
@@ -492,6 +493,7 @@ impl<'a> Test3 {
     }
 
     pub fn clear_c(&mut self) {
+        use protobuf::Clear;
         self.c.clear();
     }
 
@@ -663,6 +665,7 @@ impl<'a> Test4 {
     }
 
     pub fn clear_d(&mut self) {
+        use protobuf::Clear;
         self.d.clear();
     }
 
@@ -835,6 +838,7 @@ impl<'a> TestPackedUnpacked {
     }
 
     pub fn clear_unpacked(&mut self) {
+        use protobuf::Clear;
         self.unpacked.clear();
     }
 
@@ -857,6 +861,7 @@ impl<'a> TestPackedUnpacked {
     }
 
     pub fn clear_packed(&mut self) {
+        use protobuf::Clear;
         self.packed.clear();
     }
 
@@ -1569,6 +1574,7 @@ impl<'a> TestSelfReference {
     }
 
     pub fn clear_r1(&mut self) {
+        use protobuf::Clear;
         self.r1.clear();
     }
 
@@ -1595,6 +1601,7 @@ impl<'a> TestSelfReference {
     }
 
     pub fn clear_r2(&mut self) {
+        use protobuf::Clear;
         self.r2.clear();
     }
 
@@ -1804,6 +1811,7 @@ impl<'a> TestDefaultInstanceField {
     }
 
     pub fn clear_s(&mut self) {
+        use protobuf::Clear;
         self.s.clear();
     }
 
@@ -1972,6 +1980,7 @@ impl<'a> TestDefaultInstance {
     }
 
     pub fn clear_field(&mut self) {
+        use protobuf::Clear;
         self.field.clear();
     }
 
@@ -2671,6 +2680,7 @@ impl<'a> TestTypesSingular {
     }
 
     pub fn clear_string_field(&mut self) {
+        use protobuf::Clear;
         self.string_field.clear();
     }
 
@@ -2700,6 +2710,7 @@ impl<'a> TestTypesSingular {
     }
 
     pub fn clear_bytes_field(&mut self) {
+        use protobuf::Clear;
         self.bytes_field.clear();
     }
 
@@ -3372,6 +3383,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_double_field(&mut self) {
+        use protobuf::Clear;
         self.double_field.clear();
     }
 
@@ -3394,6 +3406,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_float_field(&mut self) {
+        use protobuf::Clear;
         self.float_field.clear();
     }
 
@@ -3416,6 +3429,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_int32_field(&mut self) {
+        use protobuf::Clear;
         self.int32_field.clear();
     }
 
@@ -3438,6 +3452,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_int64_field(&mut self) {
+        use protobuf::Clear;
         self.int64_field.clear();
     }
 
@@ -3460,6 +3475,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_uint32_field(&mut self) {
+        use protobuf::Clear;
         self.uint32_field.clear();
     }
 
@@ -3482,6 +3498,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_uint64_field(&mut self) {
+        use protobuf::Clear;
         self.uint64_field.clear();
     }
 
@@ -3504,6 +3521,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_sint32_field(&mut self) {
+        use protobuf::Clear;
         self.sint32_field.clear();
     }
 
@@ -3526,6 +3544,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_sint64_field(&mut self) {
+        use protobuf::Clear;
         self.sint64_field.clear();
     }
 
@@ -3548,6 +3567,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_fixed32_field(&mut self) {
+        use protobuf::Clear;
         self.fixed32_field.clear();
     }
 
@@ -3570,6 +3590,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_fixed64_field(&mut self) {
+        use protobuf::Clear;
         self.fixed64_field.clear();
     }
 
@@ -3592,6 +3613,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_sfixed32_field(&mut self) {
+        use protobuf::Clear;
         self.sfixed32_field.clear();
     }
 
@@ -3614,6 +3636,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_sfixed64_field(&mut self) {
+        use protobuf::Clear;
         self.sfixed64_field.clear();
     }
 
@@ -3636,6 +3659,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_bool_field(&mut self) {
+        use protobuf::Clear;
         self.bool_field.clear();
     }
 
@@ -3658,6 +3682,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_string_field(&mut self) {
+        use protobuf::Clear;
         self.string_field.clear();
     }
 
@@ -3680,6 +3705,7 @@ impl<'a> TestTypesRepeated {
     }
 
     pub fn clear_bytes_field(&mut self) {
+        use protobuf::Clear;
         self.bytes_field.clear();
     }
 
@@ -4390,6 +4416,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_double_field(&mut self) {
+        use protobuf::Clear;
         self.double_field.clear();
     }
 
@@ -4412,6 +4439,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_float_field(&mut self) {
+        use protobuf::Clear;
         self.float_field.clear();
     }
 
@@ -4434,6 +4462,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_int32_field(&mut self) {
+        use protobuf::Clear;
         self.int32_field.clear();
     }
 
@@ -4456,6 +4485,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_int64_field(&mut self) {
+        use protobuf::Clear;
         self.int64_field.clear();
     }
 
@@ -4478,6 +4508,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_uint32_field(&mut self) {
+        use protobuf::Clear;
         self.uint32_field.clear();
     }
 
@@ -4500,6 +4531,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_uint64_field(&mut self) {
+        use protobuf::Clear;
         self.uint64_field.clear();
     }
 
@@ -4522,6 +4554,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_sint32_field(&mut self) {
+        use protobuf::Clear;
         self.sint32_field.clear();
     }
 
@@ -4544,6 +4577,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_sint64_field(&mut self) {
+        use protobuf::Clear;
         self.sint64_field.clear();
     }
 
@@ -4566,6 +4600,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_fixed32_field(&mut self) {
+        use protobuf::Clear;
         self.fixed32_field.clear();
     }
 
@@ -4588,6 +4623,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_fixed64_field(&mut self) {
+        use protobuf::Clear;
         self.fixed64_field.clear();
     }
 
@@ -4610,6 +4646,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_sfixed32_field(&mut self) {
+        use protobuf::Clear;
         self.sfixed32_field.clear();
     }
 
@@ -4632,6 +4669,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_sfixed64_field(&mut self) {
+        use protobuf::Clear;
         self.sfixed64_field.clear();
     }
 
@@ -4654,6 +4692,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_bool_field(&mut self) {
+        use protobuf::Clear;
         self.bool_field.clear();
     }
 
@@ -4676,6 +4715,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_string_field(&mut self) {
+        use protobuf::Clear;
         self.string_field.clear();
     }
 
@@ -4698,6 +4738,7 @@ impl<'a> TestTypesRepeatedPacked {
     }
 
     pub fn clear_bytes_field(&mut self) {
+        use protobuf::Clear;
         self.bytes_field.clear();
     }
 

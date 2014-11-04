@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use std::collections::hashmap;
+use std::collections::hash_map;
 use std::default::Default;
 use std::slice;
 use core::wire_format;
@@ -124,8 +124,10 @@ impl UnknownFields {
     fn find_field<'a>(&'a mut self, number: u32) -> &'a mut UnknownValues {
         self.init_map();
 
-        self.fields.as_mut().unwrap()
-            .find_or_insert_with(number, |_| Default::default())
+        match self.fields.as_mut().unwrap().entry(number) {
+            hash_map::Vacant(entry) => entry.set(Default::default()),
+            hash_map::Occupied(entry) => entry.into_mut(),
+        }
     }
 
     pub fn add_fixed32(&mut self, number: u32, fixed32: u32) {
@@ -164,7 +166,7 @@ impl Clear for UnknownFields {
 }
 
 pub struct UnknownFieldIter<'s> {
-    entries: Option<hashmap::Entries<'s, u32, UnknownValues>>,
+    entries: Option<hash_map::Entries<'s, u32, UnknownValues>>,
 }
 
 impl<'s> Iterator<(u32, &'s UnknownValues)> for UnknownFieldIter<'s> {

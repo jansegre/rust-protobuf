@@ -10,20 +10,6 @@ pub struct RepeatedField<T> {
     len: uint,
 }
 
-impl<T> Collection for RepeatedField<T> {
-    #[inline]
-    fn len(&self) -> uint {
-        self.len
-    }
-}
-
-impl<T> Mutable for RepeatedField<T> {
-    #[inline]
-    fn clear(&mut self) {
-        self.len = 0;
-    }
-}
-
 impl<T> Clear for RepeatedField<T> {
     #[inline]
     fn clear(&mut self) {
@@ -249,7 +235,7 @@ impl<T : Clone> Clone for RepeatedField<T> {
     fn clone(&self) -> RepeatedField<T> {
         RepeatedField {
             vec: self.as_slice().to_vec(),
-            len: self.len(),
+            len: self.len,
         }
     }
 }

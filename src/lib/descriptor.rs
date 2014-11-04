@@ -304,6 +304,7 @@ impl<'a> FileDescriptorSet {
     }
 
     pub fn clear_file(&mut self) {
+        use protobuf::Clear;
         self.file.clear();
     }
 
@@ -485,6 +486,7 @@ impl<'a> FileDescriptorProto {
     }
 
     pub fn clear_name(&mut self) {
+        use protobuf::Clear;
         self.name.clear();
     }
 
@@ -514,6 +516,7 @@ impl<'a> FileDescriptorProto {
     }
 
     pub fn clear_package(&mut self) {
+        use protobuf::Clear;
         self.package.clear();
     }
 
@@ -543,6 +546,7 @@ impl<'a> FileDescriptorProto {
     }
 
     pub fn clear_dependency(&mut self) {
+        use protobuf::Clear;
         self.dependency.clear();
     }
 
@@ -565,6 +569,7 @@ impl<'a> FileDescriptorProto {
     }
 
     pub fn clear_public_dependency(&mut self) {
+        use protobuf::Clear;
         self.public_dependency.clear();
     }
 
@@ -587,6 +592,7 @@ impl<'a> FileDescriptorProto {
     }
 
     pub fn clear_weak_dependency(&mut self) {
+        use protobuf::Clear;
         self.weak_dependency.clear();
     }
 
@@ -609,6 +615,7 @@ impl<'a> FileDescriptorProto {
     }
 
     pub fn clear_message_type(&mut self) {
+        use protobuf::Clear;
         self.message_type.clear();
     }
 
@@ -631,6 +638,7 @@ impl<'a> FileDescriptorProto {
     }
 
     pub fn clear_enum_type(&mut self) {
+        use protobuf::Clear;
         self.enum_type.clear();
     }
 
@@ -653,6 +661,7 @@ impl<'a> FileDescriptorProto {
     }
 
     pub fn clear_service(&mut self) {
+        use protobuf::Clear;
         self.service.clear();
     }
 
@@ -675,6 +684,7 @@ impl<'a> FileDescriptorProto {
     }
 
     pub fn clear_extension(&mut self) {
+        use protobuf::Clear;
         self.extension.clear();
     }
 
@@ -697,6 +707,7 @@ impl<'a> FileDescriptorProto {
     }
 
     pub fn clear_options(&mut self) {
+        use protobuf::Clear;
         self.options.clear();
     }
 
@@ -723,6 +734,7 @@ impl<'a> FileDescriptorProto {
     }
 
     pub fn clear_source_code_info(&mut self) {
+        use protobuf::Clear;
         self.source_code_info.clear();
     }
 
@@ -1258,6 +1270,7 @@ impl<'a> DescriptorProto {
     }
 
     pub fn clear_name(&mut self) {
+        use protobuf::Clear;
         self.name.clear();
     }
 
@@ -1287,6 +1300,7 @@ impl<'a> DescriptorProto {
     }
 
     pub fn clear_field(&mut self) {
+        use protobuf::Clear;
         self.field.clear();
     }
 
@@ -1309,6 +1323,7 @@ impl<'a> DescriptorProto {
     }
 
     pub fn clear_extension(&mut self) {
+        use protobuf::Clear;
         self.extension.clear();
     }
 
@@ -1331,6 +1346,7 @@ impl<'a> DescriptorProto {
     }
 
     pub fn clear_nested_type(&mut self) {
+        use protobuf::Clear;
         self.nested_type.clear();
     }
 
@@ -1353,6 +1369,7 @@ impl<'a> DescriptorProto {
     }
 
     pub fn clear_enum_type(&mut self) {
+        use protobuf::Clear;
         self.enum_type.clear();
     }
 
@@ -1375,6 +1392,7 @@ impl<'a> DescriptorProto {
     }
 
     pub fn clear_extension_range(&mut self) {
+        use protobuf::Clear;
         self.extension_range.clear();
     }
 
@@ -1397,6 +1415,7 @@ impl<'a> DescriptorProto {
     }
 
     pub fn clear_options(&mut self) {
+        use protobuf::Clear;
         self.options.clear();
     }
 
@@ -2015,6 +2034,7 @@ impl<'a> FieldDescriptorProto {
     }
 
     pub fn clear_name(&mut self) {
+        use protobuf::Clear;
         self.name.clear();
     }
 
@@ -2122,6 +2142,7 @@ impl<'a> FieldDescriptorProto {
     }
 
     pub fn clear_type_name(&mut self) {
+        use protobuf::Clear;
         self.type_name.clear();
     }
 
@@ -2151,6 +2172,7 @@ impl<'a> FieldDescriptorProto {
     }
 
     pub fn clear_extendee(&mut self) {
+        use protobuf::Clear;
         self.extendee.clear();
     }
 
@@ -2180,6 +2202,7 @@ impl<'a> FieldDescriptorProto {
     }
 
     pub fn clear_default_value(&mut self) {
+        use protobuf::Clear;
         self.default_value.clear();
     }
 
@@ -2209,6 +2232,7 @@ impl<'a> FieldDescriptorProto {
     }
 
     pub fn clear_options(&mut self) {
+        use protobuf::Clear;
         self.options.clear();
     }
 
@@ -2717,6 +2741,7 @@ impl<'a> EnumDescriptorProto {
     }
 
     pub fn clear_name(&mut self) {
+        use protobuf::Clear;
         self.name.clear();
     }
 
@@ -2746,6 +2771,7 @@ impl<'a> EnumDescriptorProto {
     }
 
     pub fn clear_value(&mut self) {
+        use protobuf::Clear;
         self.value.clear();
     }
 
@@ -2768,6 +2794,7 @@ impl<'a> EnumDescriptorProto {
     }
 
     pub fn clear_options(&mut self) {
+        use protobuf::Clear;
         self.options.clear();
     }
 
@@ -3009,6 +3036,7 @@ impl<'a> EnumValueDescriptorProto {
     }
 
     pub fn clear_name(&mut self) {
+        use protobuf::Clear;
         self.name.clear();
     }
 
@@ -3064,6 +3092,7 @@ impl<'a> EnumValueDescriptorProto {
     }
 
     pub fn clear_options(&mut self) {
+        use protobuf::Clear;
         self.options.clear();
     }
 
@@ -3304,6 +3333,7 @@ impl<'a> ServiceDescriptorProto {
     }
 
     pub fn clear_name(&mut self) {
+        use protobuf::Clear;
         self.name.clear();
     }
 
@@ -3333,6 +3363,7 @@ impl<'a> ServiceDescriptorProto {
     }
 
     pub fn clear_method(&mut self) {
+        use protobuf::Clear;
         self.method.clear();
     }
 
@@ -3355,6 +3386,7 @@ impl<'a> ServiceDescriptorProto {
     }
 
     pub fn clear_options(&mut self) {
+        use protobuf::Clear;
         self.options.clear();
     }
 
@@ -3598,6 +3630,7 @@ impl<'a> MethodDescriptorProto {
     }
 
     pub fn clear_name(&mut self) {
+        use protobuf::Clear;
         self.name.clear();
     }
 
@@ -3627,6 +3660,7 @@ impl<'a> MethodDescriptorProto {
     }
 
     pub fn clear_input_type(&mut self) {
+        use protobuf::Clear;
         self.input_type.clear();
     }
 
@@ -3656,6 +3690,7 @@ impl<'a> MethodDescriptorProto {
     }
 
     pub fn clear_output_type(&mut self) {
+        use protobuf::Clear;
         self.output_type.clear();
     }
 
@@ -3685,6 +3720,7 @@ impl<'a> MethodDescriptorProto {
     }
 
     pub fn clear_options(&mut self) {
+        use protobuf::Clear;
         self.options.clear();
     }
 
@@ -3973,6 +4009,7 @@ impl<'a> FileOptions {
     }
 
     pub fn clear_java_package(&mut self) {
+        use protobuf::Clear;
         self.java_package.clear();
     }
 
@@ -4002,6 +4039,7 @@ impl<'a> FileOptions {
     }
 
     pub fn clear_java_outer_classname(&mut self) {
+        use protobuf::Clear;
         self.java_outer_classname.clear();
     }
 
@@ -4109,6 +4147,7 @@ impl<'a> FileOptions {
     }
 
     pub fn clear_go_package(&mut self) {
+        use protobuf::Clear;
         self.go_package.clear();
     }
 
@@ -4216,6 +4255,7 @@ impl<'a> FileOptions {
     }
 
     pub fn clear_uninterpreted_option(&mut self) {
+        use protobuf::Clear;
         self.uninterpreted_option.clear();
     }
 
@@ -4773,6 +4813,7 @@ impl<'a> MessageOptions {
     }
 
     pub fn clear_uninterpreted_option(&mut self) {
+        use protobuf::Clear;
         self.uninterpreted_option.clear();
     }
 
@@ -5118,6 +5159,7 @@ impl<'a> FieldOptions {
     }
 
     pub fn clear_experimental_map_key(&mut self) {
+        use protobuf::Clear;
         self.experimental_map_key.clear();
     }
 
@@ -5173,6 +5215,7 @@ impl<'a> FieldOptions {
     }
 
     pub fn clear_uninterpreted_option(&mut self) {
+        use protobuf::Clear;
         self.uninterpreted_option.clear();
     }
 
@@ -5600,6 +5643,7 @@ impl<'a> EnumOptions {
     }
 
     pub fn clear_uninterpreted_option(&mut self) {
+        use protobuf::Clear;
         self.uninterpreted_option.clear();
     }
 
@@ -5795,6 +5839,7 @@ impl<'a> EnumValueOptions {
     }
 
     pub fn clear_uninterpreted_option(&mut self) {
+        use protobuf::Clear;
         self.uninterpreted_option.clear();
     }
 
@@ -5956,6 +6001,7 @@ impl<'a> ServiceOptions {
     }
 
     pub fn clear_uninterpreted_option(&mut self) {
+        use protobuf::Clear;
         self.uninterpreted_option.clear();
     }
 
@@ -6117,6 +6163,7 @@ impl<'a> MethodOptions {
     }
 
     pub fn clear_uninterpreted_option(&mut self) {
+        use protobuf::Clear;
         self.uninterpreted_option.clear();
     }
 
@@ -6290,6 +6337,7 @@ impl<'a> UninterpretedOption {
     }
 
     pub fn clear_name(&mut self) {
+        use protobuf::Clear;
         self.name.clear();
     }
 
@@ -6312,6 +6360,7 @@ impl<'a> UninterpretedOption {
     }
 
     pub fn clear_identifier_value(&mut self) {
+        use protobuf::Clear;
         self.identifier_value.clear();
     }
 
@@ -6419,6 +6468,7 @@ impl<'a> UninterpretedOption {
     }
 
     pub fn clear_string_value(&mut self) {
+        use protobuf::Clear;
         self.string_value.clear();
     }
 
@@ -6448,6 +6498,7 @@ impl<'a> UninterpretedOption {
     }
 
     pub fn clear_aggregate_value(&mut self) {
+        use protobuf::Clear;
         self.aggregate_value.clear();
     }
 
@@ -6822,6 +6873,7 @@ impl<'a> UninterpretedOption_NamePart {
     }
 
     pub fn clear_name_part(&mut self) {
+        use protobuf::Clear;
         self.name_part.clear();
     }
 
@@ -7056,6 +7108,7 @@ impl<'a> SourceCodeInfo {
     }
 
     pub fn clear_location(&mut self) {
+        use protobuf::Clear;
         self.location.clear();
     }
 
@@ -7223,6 +7276,7 @@ impl<'a> SourceCodeInfo_Location {
     }
 
     pub fn clear_path(&mut self) {
+        use protobuf::Clear;
         self.path.clear();
     }
 
@@ -7245,6 +7299,7 @@ impl<'a> SourceCodeInfo_Location {
     }
 
     pub fn clear_span(&mut self) {
+        use protobuf::Clear;
         self.span.clear();
     }
 
@@ -7267,6 +7322,7 @@ impl<'a> SourceCodeInfo_Location {
     }
 
     pub fn clear_leading_comments(&mut self) {
+        use protobuf::Clear;
         self.leading_comments.clear();
     }
 
@@ -7296,6 +7352,7 @@ impl<'a> SourceCodeInfo_Location {
     }
 
     pub fn clear_trailing_comments(&mut self) {
+        use protobuf::Clear;
         self.trailing_comments.clear();
     }
 

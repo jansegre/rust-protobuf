@@ -679,6 +679,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_string_singular(&mut self) {
+        use protobuf::Clear;
         self.string_singular.clear();
     }
 
@@ -708,6 +709,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_bytes_singular(&mut self) {
+        use protobuf::Clear;
         self.bytes_singular.clear();
     }
 
@@ -763,6 +765,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_test_message_singular(&mut self) {
+        use protobuf::Clear;
         self.test_message_singular.clear();
     }
 
@@ -789,6 +792,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_double_repeated(&mut self) {
+        use protobuf::Clear;
         self.double_repeated.clear();
     }
 
@@ -811,6 +815,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_float_repeated(&mut self) {
+        use protobuf::Clear;
         self.float_repeated.clear();
     }
 
@@ -833,6 +838,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_int32_repeated(&mut self) {
+        use protobuf::Clear;
         self.int32_repeated.clear();
     }
 
@@ -855,6 +861,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_int64_repeated(&mut self) {
+        use protobuf::Clear;
         self.int64_repeated.clear();
     }
 
@@ -877,6 +884,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_uint32_repeated(&mut self) {
+        use protobuf::Clear;
         self.uint32_repeated.clear();
     }
 
@@ -899,6 +907,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_uint64_repeated(&mut self) {
+        use protobuf::Clear;
         self.uint64_repeated.clear();
     }
 
@@ -921,6 +930,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_sint32_repeated(&mut self) {
+        use protobuf::Clear;
         self.sint32_repeated.clear();
     }
 
@@ -943,6 +953,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_sint64_repeated(&mut self) {
+        use protobuf::Clear;
         self.sint64_repeated.clear();
     }
 
@@ -965,6 +976,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_fixed32_repeated(&mut self) {
+        use protobuf::Clear;
         self.fixed32_repeated.clear();
     }
 
@@ -987,6 +999,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_fixed64_repeated(&mut self) {
+        use protobuf::Clear;
         self.fixed64_repeated.clear();
     }
 
@@ -1009,6 +1022,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_sfixed32_repeated(&mut self) {
+        use protobuf::Clear;
         self.sfixed32_repeated.clear();
     }
 
@@ -1031,6 +1045,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_sfixed64_repeated(&mut self) {
+        use protobuf::Clear;
         self.sfixed64_repeated.clear();
     }
 
@@ -1053,6 +1068,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_bool_repeated(&mut self) {
+        use protobuf::Clear;
         self.bool_repeated.clear();
     }
 
@@ -1075,6 +1091,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_string_repeated(&mut self) {
+        use protobuf::Clear;
         self.string_repeated.clear();
     }
 
@@ -1097,6 +1114,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_bytes_repeated(&mut self) {
+        use protobuf::Clear;
         self.bytes_repeated.clear();
     }
 
@@ -1119,6 +1137,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_test_enum_repeated(&mut self) {
+        use protobuf::Clear;
         self.test_enum_repeated.clear();
     }
 
@@ -1141,6 +1160,7 @@ impl<'a> TestTypes {
     }
 
     pub fn clear_test_message_repeated(&mut self) {
+        use protobuf::Clear;
         self.test_message_repeated.clear();
     }
 

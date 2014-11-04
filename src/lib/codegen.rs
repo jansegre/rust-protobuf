@@ -402,7 +402,7 @@ impl<'a> MessageInfo {
             proto_message: proto_message.clone(),
             pkg: pkg.to_string(),
             prefix: prefix.to_string(),
-            type_name: prefix.to_string().append(proto_message.get_name()),
+            type_name: prefix.to_string() + proto_message.get_name(),
             fields: proto_message.get_field().iter().flat_map(|field| {
                 Field::parse(field, pkg).into_iter()
             }).collect(),
@@ -446,7 +446,7 @@ impl Enum {
         Enum {
             //pkg: pkg.to_string(),
             //prefix: prefix.to_string(),
-            type_name: prefix.to_string().append(proto.get_name()),
+            type_name: prefix.to_string() + proto.get_name(),
             values: proto.get_value().iter().map(|p| EnumValue::parse(p, prefix)).collect(),
         }
     }
@@ -471,7 +471,7 @@ impl EnumValue {
     }
 
     fn rust_name(&self) -> String {
-        self.prefix.to_string().append(self.name())
+        self.prefix.to_string() + self.name()
     }
 }
 
@@ -853,11 +853,12 @@ impl<'a> IndentWriter<'a> {
     }
 
     fn clear_field_func(&self) -> String {
-        "clear_".to_string().append(self.field.as_ref().unwrap().name.as_slice())
+        "clear_".to_string() + self.field.as_ref().unwrap().name.as_slice()
     }
 
     fn clear_field(&self) {
         if self.field().repeated || self.field().type_is_not_trivial() {
+            self.write_line("use protobuf::Clear;");
             self.write_line(format!("{:s}.clear();", self.self_field()));
         } else {
             self.self_field_assign_none();
@@ -1455,12 +1456,12 @@ fn write_message(msg: &MessageInfo, w: &mut IndentWriter) {
 
         for nested_type in message_type.get_nested_type().iter() {
             w.write_line("");
-            write_message(&MessageInfo::parse(nested_type, pkg.as_slice(), msg.type_name.to_string().append("_").as_slice()), w);
+            write_message(&MessageInfo::parse(nested_type, pkg.as_slice(), (msg.type_name.to_string() + "_").as_slice()), w);
         }
 
         for enum_type in message_type.get_enum_type().iter() {
             w.write_line("");
-            write_enum(&Enum::parse(enum_type, pkg, msg.type_name.to_string().append("_").as_slice()), w);
+            write_enum(&Enum::parse(enum_type, pkg, (msg.type_name.to_string() + "_").as_slice()), w);
         }
     });
 }
@@ -1585,7 +1586,7 @@ pub fn gen(files: &[FileDescriptorProto], _: &GenOptions) -> Vec<GenResult> {
         }
 
         results.push(GenResult {
-            name: base.to_string().append(".rs"),
+            name: base.to_string() + ".rs",
             content: os.vec,
         });
     }

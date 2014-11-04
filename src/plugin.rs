@@ -78,6 +78,7 @@ impl<'a> CodeGeneratorRequest {
     }
 
     pub fn clear_file_to_generate(&mut self) {
+        use protobuf::Clear;
         self.file_to_generate.clear();
     }
 
@@ -100,6 +101,7 @@ impl<'a> CodeGeneratorRequest {
     }
 
     pub fn clear_parameter(&mut self) {
+        use protobuf::Clear;
         self.parameter.clear();
     }
 
@@ -129,6 +131,7 @@ impl<'a> CodeGeneratorRequest {
     }
 
     pub fn clear_proto_file(&mut self) {
+        use protobuf::Clear;
         self.proto_file.clear();
     }
 
@@ -357,6 +360,7 @@ impl<'a> CodeGeneratorResponse {
     }
 
     pub fn clear_error(&mut self) {
+        use protobuf::Clear;
         self.error.clear();
     }
 
@@ -386,6 +390,7 @@ impl<'a> CodeGeneratorResponse {
     }
 
     pub fn clear_file(&mut self) {
+        use protobuf::Clear;
         self.file.clear();
     }
 
@@ -585,6 +590,7 @@ impl<'a> CodeGeneratorResponse_File {
     }
 
     pub fn clear_name(&mut self) {
+        use protobuf::Clear;
         self.name.clear();
     }
 
@@ -614,6 +620,7 @@ impl<'a> CodeGeneratorResponse_File {
     }
 
     pub fn clear_insertion_point(&mut self) {
+        use protobuf::Clear;
         self.insertion_point.clear();
     }
 
@@ -643,6 +650,7 @@ impl<'a> CodeGeneratorResponse_File {
     }
 
     pub fn clear_content(&mut self) {
+        use protobuf::Clear;
         self.content.clear();
     }
 

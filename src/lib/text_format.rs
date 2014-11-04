@@ -3,18 +3,18 @@ use core::Message;
 use descriptor::*;
 
 fn print_bytes_to(bytes: &[u8], buf: &mut String) {
-    buf.push_char('"');
+    buf.push('"');
     for &b in bytes.iter() {
         if b < 0x20 || b >= 0x80 {
-            buf.push_char('\\');
-            buf.push_char((b'0' + ((b >> 6) & 3)) as char);
-            buf.push_char((b'0' + ((b >> 3) & 7)) as char);
-            buf.push_char((b'0' + (b & 7)) as char);
+            buf.push('\\');
+            buf.push((b'0' + ((b >> 6) & 3)) as char);
+            buf.push((b'0' + ((b >> 3) & 7)) as char);
+            buf.push((b'0' + (b & 7)) as char);
         } else {
-            buf.push_char(b as char);
+            buf.push(b as char);
         }
     }
-    buf.push_char('"');
+    buf.push('"');
 }
 
 fn print_str_to(s: &str, buf: &mut String) {
@@ -201,7 +201,7 @@ mod test {
         t("sfixed64_singular: 99",    |m| m.set_sfixed64_singular(99));
         t("bool_singular: false",     |m| m.set_bool_singular(false));
         t("string_singular: \"abc\"", |m| m.set_string_singular("abc".to_string()));
-        t("bytes_singular: \"def\"",  |m| m.set_bytes_singular(Vec::from_slice("def".as_bytes())));
+        t("bytes_singular: \"def\"",  |m| m.set_bytes_singular("def".as_bytes().to_vec()));
         t("test_enum_singular: DARK", |m| m.set_test_enum_singular(DARK));
         t("test_message_singular {}", |m| { m.mut_test_message_singular(); });
     }
@@ -223,7 +223,7 @@ mod test {
         t("sfixed64_repeated: 99",    |m| m.add_sfixed64_repeated(99));
         t("bool_repeated: false",     |m| m.add_bool_repeated(false));
         t("string_repeated: \"abc\"", |m| m.add_string_repeated(String::from_str("abc")));
-        t("bytes_repeated: \"def\"",  |m| m.add_bytes_repeated(Vec::from_slice("def".as_bytes())));
+        t("bytes_repeated: \"def\"",  |m| m.add_bytes_repeated("def".as_bytes().to_vec()));
         t("test_enum_repeated: DARK", |m| m.add_test_enum_repeated(DARK));
         t("test_message_repeated {}", |m| { m.add_test_message_repeated(Default::default()); });
     }

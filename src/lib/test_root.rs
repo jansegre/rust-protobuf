@@ -50,6 +50,7 @@ impl<'a> Root {
     }
 
     pub fn clear_nested(&mut self) {
+        use protobuf::Clear;
         self.nested.clear();
     }
 
