@@ -789,13 +789,13 @@ impl<'a> IndentWriter<'a> {
     }
 
     #[allow(dead_code)]
-    fn fail<S : Str>(&self, reason: S) {
+    fn panic<S : Str + fmt::Show>(&self, reason: S) {
         self.write_line(format!("panic!({});", reason));
     }
 
     #[allow(dead_code)]
     fn todo(&self) {
-        self.fail("TODO");
+        self.panic("TODO");
     }
 
     fn deriving(&mut self, deriving: &[&str]) {
